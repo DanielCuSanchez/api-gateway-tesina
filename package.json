@@ -1,0 +1,19 @@
+{
+  "name": "api-gateway-tesina",
+  "version": "1.0.0",
+  "description": "Las industrias, organizaciones y empresas modernas operan con sistemas informáticos para gestionar clientes y procesar pagos, una necesidad fundamental en el entorno comercial actual. En México, las PyMEs, enfrentan el desafío de adoptar un sistema especializado y centralizado que administre eficientemente sus operaciones. Esta investigación explora un modelo basado en una API gateway que sea una alternativa al proceso complejo de integración de cada pasarela de pagos. Especificamente busca solucionar el tema de centralizar los diferentes medios de pago que usualmente tiene una PyME . Para probar este modelo como factible, se realizará un caso de estudio en el que se ejecute un proceso de procesamiento de pagos con este modelo de arquitectura de manera paralela que un modelo tradicional.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  }
+}
