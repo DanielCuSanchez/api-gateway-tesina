@@ -11,9 +11,9 @@ const openpayRouter = require('./gateways/openpay');
 const stripeRouter = require('./gateways/stripe');
 
 // Usar rutas
-//app.use('/conekta', conektaRouter);
-//app.use('/openpay', openpayRouter);
-//app.use('/stripe', stripeRouter);
+app.use('/conekta', conektaRouter);
+app.use('/openpay', openpayRouter);
+app.use('/stripe', stripeRouter);
 
 app.listen(port, () => {
   console.log(`API Gateway escuchando en http://localhost:${port}`);
