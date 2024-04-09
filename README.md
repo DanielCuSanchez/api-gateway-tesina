@@ -2,16 +2,14 @@
 
 Las industrias, organizaciones y empresas modernas operan con sistemas informáticos para gestionar clientes y procesar pagos, una necesidad fundamental en el entorno comercial actual. En México, las PyMEs, enfrentan el desafío de adoptar un sistema especializado y centralizado que administre eficientemente sus operaciones. Esta investigación explora un modelo basado en una API gateway que sea una alternativa al proceso complejo de integración de cada pasarela de pagos. Especificamente busca solucionar el tema de centralizar los diferentes medios de pago que usualmente tiene una PyME . Para probar este modelo como factible, se realizará un caso de estudio en el que se ejecute un proceso de procesamiento de pagos con este modelo de arquitectura de manera paralela que un modelo tradicional.
 
+## Ejemplo de uso de la API Gateway
 
-# Integración de Pasarelas de Pago en Backend
-
-Este documento detalla cómo realizar solicitudes a las pasarelas de pago Stripe y Conekta desde otro sistema. Se describe el endpoint, método, y el cuerpo de la solicitud para cada pasarela.
-
-## Solicitud a Stripe
+### Solicitud a Stripe
 
 Para realizar un cargo a través de Stripe, sigue esta especificación:
 
-**URL del Endpoint:** `http://tu-dominio.com/stripe/pago`
+**URL del Endpoint:** `http://dominio.com/stripe/pago`
+**URL del pruebas:** `http://localhost:3000/stripe/pago`
 
 **Método:** POST
 
@@ -25,7 +23,49 @@ Para realizar un cargo a través de Stripe, sigue esta especificación:
   "descripcion": "Descripción del cargo"
 }
 ```
-## Ejemplo de código JavaScript:
+
+
+### Solicitud a Conekta
+
+Para realizar un cargo a través de conekta, sigue esta especificación:
+
+**URL del Endpoint:** `http://dominio.com/conekta/pago`
+**URL del pruebas:** `http://localhost:3000/conekta/pago`
+
+**Método:** POST
+
+**Cuerpo de la Solicitud:**
+
+```json
+{
+  "token": "tok_visa",
+  "monto": 2000,
+  "moneda": "MXN",
+  "descripcion": "Descripción del cargo"
+}
+```
+### Solicitud a Openpay
+
+Para realizar un cargo a través de openpay, sigue esta especificación:
+
+**URL del Endpoint:** `http://dominio.com/openpay/pago`
+**URL del pruebas:** `http://localhost:3000/openpay/pago`
+
+**Método:** POST
+
+**Cuerpo de la Solicitud:**
+
+```json
+{
+  "token": "tok_visa",
+  "monto": 2000,
+  "moneda": "MXN",
+  "descripcion": "Descripción del cargo"
+}
+```
+
+
+### Ejemplo de Query desde frontend JavaScript:
 
 ```json
 fetch('http://tu-dominio.com/stripe/pago', {

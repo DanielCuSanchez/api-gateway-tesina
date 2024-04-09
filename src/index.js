@@ -1,9 +1,11 @@
 const express = require('express');
+const morgan = require('morgan');
 require('dotenv').config(); // Cargar variables de entorno
 const app = express();
 const port = 3000;
 
 app.use(express.json()); // Middleware para parsear JSON
+app.use(morgan('dev'));// Configura morgan para loguear todas las peticiones usando el formato predefinido 'dev'
 
 // Importar rutas de las pasarelas de pago
 const conektaRouter = require('./gateways/conekta');
