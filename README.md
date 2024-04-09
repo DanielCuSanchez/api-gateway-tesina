@@ -64,10 +64,9 @@ Para realizar un cargo a través de openpay, sigue esta especificación:
 }
 ```
 
-
 ### Ejemplo de Query desde frontend JavaScript:
 
-```json
+```javascript
 fetch('http://tu-dominio.com/stripe/pago', {
   method: 'POST',
   headers: {
@@ -83,7 +82,7 @@ fetch('http://tu-dominio.com/stripe/pago', {
 .then(response => response.json())
 .then(data => console.log(data))
 .catch((error) => console.error('Error:', error));
-
 ```
+
 
 
